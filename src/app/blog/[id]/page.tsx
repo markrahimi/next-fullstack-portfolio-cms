@@ -11,6 +11,7 @@ import { BlogPost } from "@/types";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getBlogPost } from "@/lib/get-localized-data";
 import { usePageView } from "@/hooks/usePageView";
+import { PageLoading } from "@/components/page-loading";
 
 export default function BlogPostPage() {
   const { language, t } = useLanguage();
@@ -44,14 +45,7 @@ export default function BlogPostPage() {
 
   // Loading state
   if (loading) {
-    return (
-      <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-400">{t("common.loading") || "Loading..."}</p>
-        </div>
-      </div>
-    );
+    return <PageLoading isLoading={true} />;
   }
 
   // Not found state
