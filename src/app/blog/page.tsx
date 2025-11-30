@@ -131,7 +131,7 @@ export default function BlogPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-20 glass p-12 rounded-2xl text-center"
+          className="mt-20 glass p-12 rounded-2xl text-center hidden"
         >
           <h2 className="text-3xl font-bold mb-4">
             Stay Updated
