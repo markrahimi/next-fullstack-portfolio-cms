@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Experience from "@/models/Experience";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET all experiences (admin - includes unpublished)
 export async function GET(request: NextRequest) {
   const authCheck = await checkAuth();

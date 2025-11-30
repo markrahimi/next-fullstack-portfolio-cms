@@ -3,6 +3,9 @@ import connectDB from "@/lib/mongodb";
 import Settings from "@/models/Settings";
 import { checkAuth } from "@/lib/auth-helper";
 
+// Force dynamic rendering (disable caching)
+export const dynamic = "force-dynamic";
+
 // GET settings
 export async function GET(request: NextRequest) {
   try {

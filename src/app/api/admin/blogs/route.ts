@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Blog from "@/models/Blog";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET all blogs (admin - includes unpublished)
 export async function GET(request: NextRequest) {
   const authCheck = await checkAuth();

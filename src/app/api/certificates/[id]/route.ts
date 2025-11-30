@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Certificate from "@/models/Certificate";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET - Get single certificate (public)
 export async function GET(
   request: NextRequest,

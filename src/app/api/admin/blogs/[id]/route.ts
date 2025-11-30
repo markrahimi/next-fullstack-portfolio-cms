@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Blog from "@/models/Blog";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET single blog with full data (admin only)
 export async function GET(
   request: NextRequest,

@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Education from "@/models/Education";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET all education
 export async function GET(request: NextRequest) {
   try {

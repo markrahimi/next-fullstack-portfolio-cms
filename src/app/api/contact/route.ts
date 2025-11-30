@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import ContactMessage from "@/models/ContactMessage";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // POST new contact message (public)
 export async function POST(request: NextRequest) {
   try {

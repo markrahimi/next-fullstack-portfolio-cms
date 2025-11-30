@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import ContactMessage from "@/models/ContactMessage";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // PATCH update message status (admin only)
 export async function PATCH(
   request: NextRequest,

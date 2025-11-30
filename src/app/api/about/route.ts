@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import About from "@/models/About";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET - Get About content (public)
 export async function GET() {
   try {

@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Project from "@/models/Project";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET all projects (admin - includes unpublished)
 export async function GET(request: NextRequest) {
   const authCheck = await checkAuth();

@@ -3,6 +3,8 @@ import connectDB from "@/lib/mongodb";
 import Skill from "@/models/Skill";
 import { checkAuth } from "@/lib/auth-helper";
 
+export const dynamic = "force-dynamic";
+
 // GET single skill
 export async function GET(
   request: NextRequest,

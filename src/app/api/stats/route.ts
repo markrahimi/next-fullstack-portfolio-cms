@@ -5,6 +5,8 @@ import { checkAuth } from "@/lib/auth-helper";
 import View from "@/models/View";
 import ContactMessage from "@/models/ContactMessage";
 
+export const dynamic = "force-dynamic";
+
 // GET - Get site statistics (admin only)
 export async function GET() {
   const authCheck = await checkAuth();
