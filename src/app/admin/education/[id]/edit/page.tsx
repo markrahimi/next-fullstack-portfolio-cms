@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { EducationFormData } from "@/types";
 
@@ -45,12 +46,12 @@ export default function EditEducation() {
         const data = await response.json();
         setFormData(data);
       } else {
-        alert("Failed to load education");
+        toast.error("Failed to load education");
         router.push("/admin/education");
       }
     } catch (error) {
       console.error("Error fetching education:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
       router.push("/admin/education");
     } finally {
       setLoading(false);
@@ -69,7 +70,7 @@ export default function EditEducation() {
       });
       setNewCourse({ en: "", fr: "" });
     } else {
-      alert("Please fill in course for both languages");
+      toast.error("Please fill in course for both languages");
     }
   };
 
@@ -98,15 +99,15 @@ export default function EditEducation() {
       });
 
       if (response.ok) {
-        alert("✅ Education updated successfully!");
+        toast.success("Education updated successfully!");
         router.push("/admin/education");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }

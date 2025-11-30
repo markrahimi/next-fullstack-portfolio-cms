@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { EducationFormData } from "@/types";
 
@@ -50,7 +51,7 @@ export default function CreateEducation() {
       });
       setNewCourse({ en: "", fr: "" });
     } else {
-      alert("Please fill in course for both languages");
+      toast.error("Please fill in course for both languages");
     }
   };
 
@@ -76,15 +77,15 @@ export default function CreateEducation() {
       });
 
       if (response.ok) {
-        alert("✅ Education created successfully!");
+        toast.success("Education created successfully!");
         router.push("/admin/education");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }

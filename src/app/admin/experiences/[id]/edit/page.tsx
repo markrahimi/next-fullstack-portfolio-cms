@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ExperienceFormData } from "@/types";
 
@@ -45,12 +46,12 @@ export default function EditExperience() {
         const data = await response.json();
         setFormData(data);
       } else {
-        alert("Failed to load experience");
+        toast.error("Failed to load experience");
         router.push("/admin/experiences");
       }
     } catch (error) {
       console.error("Error fetching experience:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
       router.push("/admin/experiences");
     } finally {
       setLoading(false);
@@ -69,7 +70,7 @@ export default function EditExperience() {
       });
       setNewAchievement({ en: "", fr: "" });
     } else {
-      alert("Please fill in achievement for both languages");
+      toast.error("Please fill in achievement for both languages");
     }
   };
 
@@ -98,15 +99,15 @@ export default function EditExperience() {
       });
 
       if (response.ok) {
-        alert("✅ Experience updated successfully!");
+        toast.success("Experience updated successfully!");
         router.push("/admin/experiences");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }

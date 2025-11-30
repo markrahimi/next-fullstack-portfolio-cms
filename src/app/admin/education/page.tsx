@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Edit, Trash2, GraduationCap } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { EducationDB } from "@/types";
 
@@ -49,13 +50,14 @@ export default function AdminEducation() {
       });
 
       if (response.ok) {
+        toast.success("Education deleted successfully!");
         fetchEducation();
       } else {
-        alert("Failed to delete education");
+        toast.error("Failed to delete education");
       }
     } catch (error) {
       console.error("Error deleting education:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
     }
   };
 

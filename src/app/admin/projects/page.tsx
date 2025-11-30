@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Edit, Trash2, Eye } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ProjectDB } from "@/types";
 
@@ -49,13 +50,14 @@ export default function AdminProjects() {
       });
 
       if (response.ok) {
+        toast.success("Project deleted successfully!");
         fetchProjects();
       } else {
-        alert("Failed to delete project");
+        toast.error("Failed to delete project");
       }
     } catch (error) {
       console.error("Error deleting project:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
     }
   };
 

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, X, Image as ImageIcon, Eye, Save } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { BlogFormData } from "@/types";
 
@@ -69,19 +70,19 @@ export default function CreateBlog() {
 
     // Validation
     if (!formData.title.en || !formData.title.fr) {
-      alert("Please fill in titles for both languages");
+      toast.error("Please fill in titles for both languages");
       return;
     }
     if (!formData.excerpt.en || !formData.excerpt.fr) {
-      alert("Please fill in excerpts for both languages");
+      toast.error("Please fill in excerpts for both languages");
       return;
     }
     if (!formData.content.en || !formData.content.fr) {
-      alert("Please fill in content for both languages");
+      toast.error("Please fill in content for both languages");
       return;
     }
     if (!formData.image) {
-      alert("Please provide an image URL");
+      toast.error("Please provide an image URL");
       return;
     }
 
@@ -97,14 +98,15 @@ export default function CreateBlog() {
       });
 
       if (response.ok) {
+        toast.success("Blog created successfully!");
         router.push("/admin/blogs");
       } else {
         const error = await response.json();
-        alert(`Failed to create blog: ${error.error}`);
+        toast.error(`Failed to create blog: ${error.error}`);
       }
     } catch (error) {
       console.error("Error creating blog:", error);
-      alert("An error occurred while creating the blog");
+      toast.error("An error occurred while creating the blog");
     } finally {
       setSubmitting(false);
     }

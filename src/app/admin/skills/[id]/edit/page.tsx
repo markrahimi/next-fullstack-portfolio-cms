@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { SkillFormData } from "@/types";
 
@@ -47,12 +48,12 @@ export default function EditSkill() {
         const data = await response.json();
         setFormData(data);
       } else {
-        alert("Failed to load skill category");
+        toast.error("Failed to load skill category");
         router.push("/admin/skills");
       }
     } catch (error) {
       console.error("Error fetching skill:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
       router.push("/admin/skills");
     } finally {
       setLoading(false);
@@ -83,12 +84,12 @@ export default function EditSkill() {
     if (!formData) return;
 
     if (!formData.title.en || !formData.title.fr) {
-      alert("Please fill in titles for both languages");
+      toast.error("Please fill in titles for both languages");
       return;
     }
 
     if (formData.skills.length === 0) {
-      alert("Please add at least one skill");
+      toast.error("Please add at least one skill");
       return;
     }
 
@@ -102,15 +103,15 @@ export default function EditSkill() {
       });
 
       if (response.ok) {
-        alert("✅ Skill category updated successfully!");
+        toast.success("Skill category updated successfully!");
         router.push("/admin/skills");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }

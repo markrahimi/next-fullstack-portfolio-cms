@@ -5,6 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, X, Eye, Save } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { BlogFormData } from "@/types";
 
@@ -49,12 +50,12 @@ export default function EditBlog() {
         const data = await response.json();
         setFormData(data);
       } else {
-        alert("Failed to load blog");
+        toast.error("Failed to load blog");
         router.push("/admin/blogs");
       }
     } catch (error) {
       console.error("Error fetching blog:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
       router.push("/admin/blogs");
     } finally {
       setLoading(false);
@@ -86,19 +87,19 @@ export default function EditBlog() {
 
     // Validation
     if (!formData.title.en || !formData.title.fr) {
-      alert("Please fill in titles for both languages");
+      toast.error("Please fill in titles for both languages");
       return;
     }
     if (!formData.excerpt.en || !formData.excerpt.fr) {
-      alert("Please fill in excerpts for both languages");
+      toast.error("Please fill in excerpts for both languages");
       return;
     }
     if (!formData.content.en || !formData.content.fr) {
-      alert("Please fill in content for both languages");
+      toast.error("Please fill in content for both languages");
       return;
     }
     if (!formData.image) {
-      alert("Please provide an image URL");
+      toast.error("Please provide an image URL");
       return;
     }
 
@@ -114,15 +115,15 @@ export default function EditBlog() {
       });
 
       if (response.ok) {
-        alert("✅ Blog updated successfully!");
+        toast.success("Blog updated successfully!");
         router.push("/admin/blogs");
       } else {
         const error = await response.json();
-        alert(`❌ Failed to update blog: ${error.error}`);
+        toast.error(`Failed to update blog: ${error.error}`);
       }
     } catch (error) {
       console.error("Error updating blog:", error);
-      alert("❌ An error occurred while updating the blog");
+      toast.error("An error occurred while updating the blog");
     } finally {
       setSubmitting(false);
     }

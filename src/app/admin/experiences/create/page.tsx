@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Plus, X } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ExperienceFormData } from "@/types";
 
@@ -55,7 +56,7 @@ export default function CreateExperience() {
       });
       setNewAchievement({ en: "", fr: "" });
     } else {
-      alert("Please fill in achievement for both languages");
+      toast.error("Please fill in achievement for both languages");
     }
   };
 
@@ -81,15 +82,15 @@ export default function CreateExperience() {
       });
 
       if (response.ok) {
-        alert("✅ Experience created successfully!");
+        toast.success("Experience created successfully!");
         router.push("/admin/experiences");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }

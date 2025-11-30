@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Edit, Trash2, Eye } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { Blog } from "@/types";
 
@@ -49,13 +50,14 @@ export default function AdminBlogs() {
       });
 
       if (response.ok) {
+        toast.success("Blog deleted successfully!");
         fetchBlogs();
       } else {
-        alert("Failed to delete blog");
+        toast.error("Failed to delete blog");
       }
     } catch (error) {
       console.error("Error deleting blog:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
     }
   };
 

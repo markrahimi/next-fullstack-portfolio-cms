@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Edit, Trash2, Briefcase } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ExperienceDB } from "@/types";
 
@@ -49,13 +50,14 @@ export default function AdminExperiences() {
       });
 
       if (response.ok) {
+        toast.success("Experience deleted successfully!");
         fetchExperiences();
       } else {
-        alert("Failed to delete experience");
+        toast.error("Failed to delete experience");
       }
     } catch (error) {
       console.error("Error deleting experience:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
     }
   };
 

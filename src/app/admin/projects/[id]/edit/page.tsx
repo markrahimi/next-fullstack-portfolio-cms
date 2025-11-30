@@ -5,6 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Save, Plus, X, Globe } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ProjectFormData } from "@/types";
 
@@ -47,12 +48,12 @@ export default function EditProject() {
         const data = await response.json();
         setFormData(data);
       } else {
-        alert("Failed to load project");
+        toast.error("Failed to load project");
         router.push("/admin/projects");
       }
     } catch (error) {
       console.error("Error fetching project:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
       router.push("/admin/projects");
     } finally {
       setLoading(false);
@@ -73,15 +74,15 @@ export default function EditProject() {
       });
 
       if (response.ok) {
-        alert("✅ Project updated successfully!");
+        toast.success("Project updated successfully!");
         router.push("/admin/projects");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || "Unknown error"}`);
+        toast.error(`Failed: ${error.error || "Unknown error"}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }
@@ -112,7 +113,7 @@ export default function EditProject() {
       });
       setCurrentFeature({ en: "", fr: "" });
     } else {
-      alert("Please fill in feature for both languages");
+      toast.error("Please fill in feature for both languages");
     }
   };
 

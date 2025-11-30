@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Save, Plus, X, Globe } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { ProjectFormData } from "@/types";
 
@@ -62,15 +63,15 @@ export default function CreateProject() {
       });
 
       if (response.ok) {
-        alert("✅ Project created successfully!");
+        toast.success("Project created successfully!");
         router.push("/admin/projects");
       } else {
         const error = await response.json();
-        alert(`❌ Failed: ${error.error || 'Unknown error'}`);
+        toast.error(`Failed: ${error.error || 'Unknown error'}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ An error occurred");
+      toast.error("An error occurred");
     } finally {
       setSaving(false);
     }
@@ -98,7 +99,7 @@ export default function CreateProject() {
       });
       setCurrentFeature({ en: "", fr: "" });
     } else {
-      alert("Please fill both English and French features");
+      toast.error("Please fill both English and French features");
     }
   };
 

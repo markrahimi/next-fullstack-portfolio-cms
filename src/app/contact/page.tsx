@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle2 } from "lucide-react";
+import { toast } from "sonner";
 import { useLanguage } from "@/hooks/useLanguage";
 import { usePageView } from "@/hooks/usePageView";
 
@@ -60,15 +61,16 @@ export default function ContactPage() {
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
+        toast.success("Message sent successfully!");
 
         // Reset success message after 3 seconds
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
-        alert("Failed to send message. Please try again.");
+        toast.error("Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      alert("An error occurred. Please try again.");
+      toast.error("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

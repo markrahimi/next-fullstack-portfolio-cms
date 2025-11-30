@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Plus, Edit, Trash2, Code } from "lucide-react";
+import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
 import { Skill } from "@/types";
 
@@ -49,13 +50,14 @@ export default function AdminSkills() {
       });
 
       if (response.ok) {
+        toast.success("Skill category deleted successfully!");
         fetchSkills();
       } else {
-        alert("Failed to delete skill category");
+        toast.error("Failed to delete skill category");
       }
     } catch (error) {
       console.error("Error deleting skill:", error);
-      alert("An error occurred");
+      toast.error("An error occurred");
     }
   };
 
