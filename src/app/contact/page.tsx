@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle2 } from "lucid
 import { toast } from "sonner";
 import { useLanguage } from "@/hooks/useLanguage";
 import { usePageView } from "@/hooks/usePageView";
+import { PageLoading } from "@/components/page-loading";
 
 export default function ContactPage() {
   usePageView("contact");
@@ -84,7 +85,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-20">
+    <>
+      <PageLoading />
+      <div className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -297,6 +300,7 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
