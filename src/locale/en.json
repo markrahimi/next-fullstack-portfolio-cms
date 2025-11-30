@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "title": "Full-Stack Developer",
+    "subtitle": "I build modern and scalable web solutions with Python, TypeScript, and modern frameworks. Passionate about clean code, automation, and continuous learning.",
+    "cta": {
+      "viewProjects": "View Projects",
+      "downloadCV": "Download CV",
+      "getInTouch": "Get in Touch"
+    },
+    "badges": {
+      "python": "Python",
+      "fastapi": "FastAPI",
+      "nextjs": "Next.js",
+      "django": "Django"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "Motivated master's student (M1 CPS2, Jean Monnet University) with 4 years of hands-on experience in backend and full-stack development using Python, FastAPI, Django, Next.js, and modern data workflows.",
+    "description2": "I have a strong interest in AI/ML and automation engineering, and I'm passionate about building scalable, efficient solutions that solve real-world problems.",
+    "description3": "Currently based in Lyon & Saint-Étienne, France. Available for remote work worldwide and hybrid positions across the European Union — no visa sponsorship required.",
+    "professionalSummary": "Professional Summary",
+    "whatIDo": "What I Do",
+    "whatIDoList": [
+      "Backend API Development with FastAPI & Django",
+      "Full-Stack Applications with Next.js & React",
+      "Database Design & Optimization",
+      "CI/CD Pipeline Implementation",
+      "Automation & Workflow Systems",
+      "AI/ML Integration"
+    ],
+    "stats": {
+      "experience": "Years Experience",
+      "projects": "Projects Completed",
+      "certifications": "Certifications",
+      "technologies": "Technologies"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "availability": "Availability"
+    },
+    "location": "Lyon, Saint-Étienne",
+    "availabilityStatus": "Open to Opportunities"
+  },
+  "skills": {
+    "title": "My",
+    "titleHighlight": "Skills",
+    "subtitle": "A comprehensive toolkit built over 4 years of hands-on experience",
+    "categories": {
+      "languages": "Programming Languages",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Databases",
+      "tools": "Tools & DevOps",
+      "concepts": "Concepts"
+    },
+    "otherSkills": "Other Skills & Languages"
+  },
+  "experience": {
+    "title": "Work",
+    "titleHighlight": "Experience",
+    "subtitle": "4+ years of professional experience in backend and full-stack development",
+    "fullTime": "full-time",
+    "partTime": "part-time",
+    "freelance": "freelance"
+  },
+  "education": {
+    "title": "Education",
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "courses": "Key Courses"
+  },
+  "projects": {
+    "title": "My",
+    "titleHighlight": "Projects",
+    "subtitle": "A showcase of my work spanning backend development, full-stack applications, and automation systems. Each project demonstrates my commitment to clean code, scalability, and user experience.",
+    "viewDetails": "View Details",
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo",
+    "allProjects": "All Projects",
+    "categories": {
+      "all": "All",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "fullstack": "Full-Stack",
+      "aiml": "AI/ML",
+      "devops": "DevOps",
+      "automation": "Automation"
+    },
+    "detail": {
+      "backToProjects": "Back to Projects",
+      "projectNotFound": "Project Not Found",
+      "overview": "Project Overview",
+      "features": "Key Features",
+      "challenges": "Challenges & Solutions",
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "techStack": "Technology Stack",
+      "metrics": "Project Metrics",
+      "cta": {
+        "title": "Interested in similar projects?",
+        "description": "I'm always open to discussing new projects and opportunities. Let's build something amazing together!",
+        "getInTouch": "Get in Touch",
+        "viewMore": "View More Projects"
+      }
+    }
+  },
+  "blog": {
+    "title": "My",
+    "titleHighlight": "Blog",
+    "subtitle": "Thoughts, tutorials, and insights on backend development, full-stack engineering, and modern software architecture.",
+    "readMore": "Read More",
+    "readTime": "min read",
+    "featured": "Featured",
+    "categories": {
+      "all": "All",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "automation": "Automation",
+      "aiml": "AI/ML"
+    }
+  },
+  "contact": {
+    "title": "Get in",
+    "titleHighlight": "Touch",
+    "subtitle": "Have a question or want to work together? I'd love to hear from you. Drop me a message and I'll get back to you as soon as possible!",
+    "connect": {
+      "title": "Let's Connect",
+      "description": "I'm currently open to new opportunities, freelance projects, and collaborations. Whether you have a question or just want to say hi, feel free to reach out!"
+    },
+    "form": {
+      "name": "Name",
+      "yourName": "Your Name",
+      "email": "Email",
+      "yourEmail": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "sent": "Message Sent!",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "remote": "Available for remote work worldwide and hybrid positions in the EU"
+    },
+    "availability": {
+      "title": "Available for Work",
+      "description": "Open to remote internships and full-time opportunities worldwide. No visa sponsorship required."
+    },
+    "social": "Follow Me"
+  },
+  "footer": {
+    "description": "Backend & Full-Stack Developer passionate about building scalable solutions with Python, FastAPI, Django, and Next.js.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect",
+    "getInTouch": "Get in Touch",
+    "rights": "All rights reserved.",
+    "madeWith": "Built with",
+    "using": "using",
+    "location": "Based in France — Open to remote work worldwide"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Continuous learning and professional development",
+    "verified": "Verified",
+    "viewCertificate": "View Certificate",
+    "expires": "Expires"
+  },
+  "common": {
+    "loading": "Loading",
+    "error": "Error",
+    "backToHome": "Back to Home",
+    "pageNotFound": "Page Not Found",
+    "comingSoon": "Coming Soon",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "scrollToExplore": "Scroll to explore",
+    "professionalSummary": "Professional Summary",
+    "whatIDo": "What I Do"
+  }
+}

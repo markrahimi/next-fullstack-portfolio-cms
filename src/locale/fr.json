@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "education": "Formation",
+    "projects": "Projets",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Développeur Full-Stack",
+    "subtitle": "Je crée des solutions web modernes et évolutives avec Python, TypeScript et des frameworks modernes. Passionné par le code propre, l'automatisation et l'apprentissage continu.",
+    "cta": {
+      "viewProjects": "Voir les projets",
+      "downloadCV": "Télécharger le CV",
+      "getInTouch": "Me contacter"
+    },
+    "badges": {
+      "python": "Python",
+      "fastapi": "FastAPI",
+      "nextjs": "Next.js",
+      "django": "Django"
+    }
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Étudiant de master motivé (M1 CPS2, Université Jean Monnet) avec 4 ans d'expérience pratique en développement backend et full-stack utilisant Python, FastAPI, Django, Next.js et des workflows de données modernes.",
+    "description2": "J'ai un fort intérêt pour l'IA/ML et l'ingénierie d'automatisation, et je suis passionné par la création de solutions évolutives et efficaces qui résolvent des problèmes concrets.",
+    "description3": "Actuellement basé à Lyon & Saint-Étienne, France. Disponible pour le travail à distance dans le monde entier et pour des postes hybrides dans l'Union européenne — pas besoin de parrainage de visa.",
+    "professionalSummary": "Résumé professionnel",
+    "whatIDo": "Ce que je fais",
+    "whatIDoList": [
+      "Développement d'API Backend avec FastAPI & Django",
+      "Applications Full-Stack avec Next.js & React",
+      "Conception et optimisation de bases de données",
+      "Implémentation de pipelines CI/CD",
+      "Systèmes d'automatisation et de workflow",
+      "Intégration IA/ML"
+    ],
+    "stats": {
+      "experience": "Années d'expérience",
+      "projects": "Projets terminés",
+      "certifications": "Certifications",
+      "technologies": "Technologies"
+    },
+    "info": {
+      "email": "Email",
+      "location": "Localisation",
+      "availability": "Disponibilité"
+    },
+    "location": "Lyon, Saint-Étienne",
+    "availabilityStatus": "Ouvert aux opportunités"
+  },
+  "skills": {
+    "title": "Mes",
+    "titleHighlight": "Compétences",
+    "subtitle": "Un ensemble d'outils complet construit au cours de 4 ans d'expérience pratique",
+    "categories": {
+      "languages": "Langages de programmation",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "databases": "Bases de données",
+      "tools": "Outils & DevOps",
+      "concepts": "Concepts"
+    },
+    "otherSkills": "Autres compétences et langues"
+  },
+  "experience": {
+    "title": "Expérience",
+    "titleHighlight": "Professionnelle",
+    "subtitle": "Plus de 4 ans d'expérience professionnelle en développement backend et full-stack",
+    "fullTime": "temps plein",
+    "partTime": "temps partiel",
+    "freelance": "freelance"
+  },
+  "education": {
+    "title": "Formation",
+    "ongoing": "En cours",
+    "completed": "Terminé",
+    "courses": "Cours principaux"
+  },
+  "projects": {
+    "title": "Mes",
+    "titleHighlight": "Projets",
+    "subtitle": "Une vitrine de mon travail couvrant le développement backend, les applications full-stack et les systèmes d'automatisation. Chaque projet démontre mon engagement envers le code propre, l'évolutivité et l'expérience utilisateur.",
+    "viewDetails": "Voir les détails",
+    "viewCode": "Voir le code",
+    "liveDemo": "Démo en direct",
+    "allProjects": "Tous les projets",
+    "categories": {
+      "all": "Tous",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "fullstack": "Full-Stack",
+      "aiml": "IA/ML",
+      "devops": "DevOps",
+      "automation": "Automatisation"
+    },
+    "detail": {
+      "backToProjects": "Retour aux projets",
+      "projectNotFound": "Projet non trouvé",
+      "overview": "Aperçu du projet",
+      "features": "Fonctionnalités clés",
+      "challenges": "Défis et solutions",
+      "challenge": "Défi",
+      "solution": "Solution",
+      "techStack": "Stack technologique",
+      "metrics": "Métriques du projet",
+      "cta": {
+        "title": "Intéressé par des projets similaires ?",
+        "description": "Je suis toujours ouvert à discuter de nouveaux projets et opportunités. Créons quelque chose d'incroyable ensemble !",
+        "getInTouch": "Me contacter",
+        "viewMore": "Voir plus de projets"
+      }
+    }
+  },
+  "blog": {
+    "title": "Mon",
+    "titleHighlight": "Blog",
+    "subtitle": "Pensées, tutoriels et idées sur le développement backend, l'ingénierie full-stack et l'architecture logicielle moderne.",
+    "readMore": "Lire plus",
+    "readTime": "min de lecture",
+    "featured": "En vedette",
+    "categories": {
+      "all": "Tous",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "devops": "DevOps",
+      "automation": "Automatisation",
+      "aiml": "IA/ML"
+    }
+  },
+  "contact": {
+    "title": "Entrons en",
+    "titleHighlight": "Contact",
+    "subtitle": "Une question ou envie de collaborer ? Je serais ravi d'avoir de vos nouvelles. Envoyez-moi un message et je vous répondrai dès que possible !",
+    "connect": {
+      "title": "Connectons-nous",
+      "description": "Je suis actuellement ouvert aux nouvelles opportunités, projets freelance et collaborations. Que vous ayez une question ou que vous vouliez simplement dire bonjour, n'hésitez pas à me contacter !"
+    },
+    "form": {
+      "name": "Nom",
+      "yourName": "Votre nom",
+      "email": "Email",
+      "yourEmail": "Votre email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "sent": "Message envoyé !",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi du message"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Localisation",
+      "remote": "Disponible pour le travail à distance dans le monde entier et pour des postes hybrides dans l'UE"
+    },
+    "availability": {
+      "title": "Disponible pour travailler",
+      "description": "Ouvert aux stages et opportunités à temps plein dans le monde entier. Pas besoin de parrainage de visa."
+    },
+    "social": "Suivez-moi"
+  },
+  "footer": {
+    "description": "Développeur Backend & Full-Stack passionné par la création de solutions évolutives avec Python, FastAPI, Django et Next.js.",
+    "quickLinks": "Liens rapides",
+    "connect": "Connexion",
+    "getInTouch": "Contactez-moi",
+    "rights": "Tous droits réservés.",
+    "madeWith": "Créé avec",
+    "using": "utilisant",
+    "location": "Basé en France — Disponible pour le travail à distance dans le monde entier"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Apprentissage continu et développement professionnel",
+    "verified": "Vérifié",
+    "viewCertificate": "Voir le certificat",
+    "expires": "Expire"
+  },
+  "common": {
+    "loading": "Chargement",
+    "error": "Erreur",
+    "backToHome": "Retour à l'accueil",
+    "pageNotFound": "Page non trouvée",
+    "comingSoon": "Bientôt disponible",
+    "learnMore": "En savoir plus",
+    "viewAll": "Voir tout",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins",
+    "scrollToExplore": "Faites défiler pour explorer",
+    "professionalSummary": "Résumé professionnel",
+    "whatIDo": "Ce que je fais"
+  }
+}
