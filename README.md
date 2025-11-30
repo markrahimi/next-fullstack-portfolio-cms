@@ -2,6 +2,8 @@
 
 A modern, full-stack portfolio website with integrated blog, admin panel, and multilingual support. Built with Next.js 14, TypeScript, MongoDB, and Tailwind CSS.
 
+🔗 **Live Preview:** [https://www.markrahimi.com](https://www.markrahimi.com)
+
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/)
