@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import { marked } from "marked";
 import { BlogPost } from "@/types";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getBlogPost } from "@/lib/get-localized-data";
@@ -161,7 +162,7 @@ export default function BlogPostPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="prose prose-lg dark:prose-invert max-w-none glass p-8 rounded-2xl"
-            dangerouslySetInnerHTML={{ __html: blogPost.content }}
+            dangerouslySetInnerHTML={{ __html: marked.parse(blogPost.content) as string }}
           />
         )}
 

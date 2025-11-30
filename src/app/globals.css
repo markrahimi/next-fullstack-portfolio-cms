@@ -288,3 +288,81 @@ body, html {
   animation: rotate-gradient 4s linear infinite;
   z-index: -1;
 }
+
+/* Blog Prose Styling */
+.prose pre {
+  background: #0d0d14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.prose code {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
+  color: #60a5fa;
+}
+
+.prose pre code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #e2e8f0 !important;
+  font-size: 0.875rem;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.prose h2 {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.prose p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.prose ul, .prose ol {
+  color: #cbd5e1;
+}
+
+.prose li::marker {
+  color: #60a5fa;
+}
+
+.prose a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.prose blockquote {
+  border-left: 4px solid #60a5fa;
+  background: rgba(59, 130, 246, 0.05);
+  padding: 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: #94a3b8;
+}
+
+.prose strong {
+  color: #f1f5f9;
+}
+
+.prose hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
