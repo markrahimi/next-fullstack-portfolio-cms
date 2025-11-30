@@ -97,7 +97,7 @@ export function HeroSection() {
               </motion.a>
 
               <motion.a
-                href="#contact"
+                href="contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 rounded-lg border-2 border-gray-300 dark:border-gray-700 hover:border-blue-600 dark:hover:border-blue-400 font-semibold transition-colors"
