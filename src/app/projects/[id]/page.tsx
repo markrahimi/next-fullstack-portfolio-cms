@@ -17,20 +17,44 @@ export default function ProjectDetailPage() {
   const projectId = params.id as string;
   usePageView(`project-${projectId}`);
   const [project, setProject] = useState<ProjectDetail | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     async function fetchProject() {
+      setLoading(true);
+      setNotFound(false);
       try {
         const data = await getProjectDetail(language, projectId);
-        setProject(data);
+        if (data) {
+          setProject(data);
+        } else {
+          setNotFound(true);
+        }
       } catch (error) {
         console.error("Error fetching project:", error);
+        setNotFound(true);
+      } finally {
+        setLoading(false);
       }
     }
     fetchProject();
   }, [language, projectId]);
 
-  if (!project) {
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400">{t("common.loading") || "Loading..."}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Not found state
+  if (notFound || !project) {
     return (
       <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
         <div className="text-center">

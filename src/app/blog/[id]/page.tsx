@@ -12,25 +12,49 @@ import { getBlogPost } from "@/lib/get-localized-data";
 import { usePageView } from "@/hooks/usePageView";
 
 export default function BlogPostPage() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const params = useParams();
   const postId = parseInt(params.id as string);
   usePageView(`blog-${postId}`);
   const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     async function fetchBlogPost() {
+      setLoading(true);
+      setNotFound(false);
       try {
         const data = await getBlogPost(language, postId);
-        setBlogPost(data);
+        if (data) {
+          setBlogPost(data);
+        } else {
+          setNotFound(true);
+        }
       } catch (error) {
         console.error("Error fetching blog post:", error);
+        setNotFound(true);
+      } finally {
+        setLoading(false);
       }
     }
     fetchBlogPost();
   }, [language, postId]);
 
-  if (!blogPost) {
+  // Loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400">{t("common.loading") || "Loading..."}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Not found state
+  if (notFound || !blogPost) {
     return (
       <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
         <div className="text-center">
