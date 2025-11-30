@@ -161,7 +161,7 @@ export default function AdminDashboard() {
               <div className="text-3xl font-bold text-green-400 group-hover:scale-110 transition-transform">
                 {loadingStats ? "..." : stats.messages}
               </div>
-              <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300">Messages</div>
+              <div className="text-gray-400 text-sm mt-1 group-hover:text-gray-300">Unread Messages</div>
             </motion.button>
             <motion.button
               onClick={() => router.push("/admin/analytics")}

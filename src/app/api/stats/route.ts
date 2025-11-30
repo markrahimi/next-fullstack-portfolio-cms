@@ -3,6 +3,7 @@ import connectDB from "@/lib/mongodb";
 import mongoose from "mongoose";
 import { checkAuth } from "@/lib/auth-helper";
 import View from "@/models/View";
+import ContactMessage from "@/models/ContactMessage";
 
 // GET - Get site statistics (admin only)
 export async function GET() {
@@ -18,7 +19,7 @@ export async function GET() {
     const [
       projectsCount,
       blogsCount,
-      messagesCount,
+      unreadMessagesCount,
       experiencesCount,
       educationCount,
       skillsCount,
@@ -27,7 +28,7 @@ export async function GET() {
     ] = await Promise.all([
       mongoose.connection.db?.collection("projects").countDocuments() || 0,
       mongoose.connection.db?.collection("blogs").countDocuments() || 0,
-      mongoose.connection.db?.collection("contacts").countDocuments() || 0,
+      ContactMessage.countDocuments({ status: "unread" }),
       mongoose.connection.db?.collection("experiences").countDocuments() || 0,
       mongoose.connection.db?.collection("education").countDocuments() || 0,
       mongoose.connection.db?.collection("skillcategories").countDocuments() || 0,
@@ -40,7 +41,7 @@ export async function GET() {
     const stats = {
       projects: projectsCount,
       blogs: blogsCount,
-      messages: messagesCount,
+      messages: unreadMessagesCount,
       experiences: experiencesCount,
       education: educationCount,
       skills: skillsCount,
