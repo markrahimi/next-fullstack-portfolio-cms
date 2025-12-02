@@ -4,9 +4,10 @@ import { useSession } from "next-auth/react";
 import { useRouter, useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Plus, X, Eye, Save } from "lucide-react";
+import { ArrowLeft, Plus, X, Save } from "lucide-react";
 import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
+import { ImageUpload } from "@/components/image-upload";
 import { BlogFormData } from "@/types";
 
 const colorThemes = [
@@ -28,7 +29,6 @@ export default function EditBlog() {
   const [loading, setLoading] = useState(true);
   const [activeLang, setActiveLang] = useState<"en" | "fr">("en");
   const [newTag, setNewTag] = useState("");
-  const [imagePreview, setImagePreview] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
   useEffect(() => {
@@ -248,34 +248,14 @@ export default function EditBlog() {
           <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6">
             <h3 className="text-xl font-semibold text-white mb-4">Media & Details</h3>
 
-            {/* Image URL */}
+            {/* Image Upload */}
             <div className="mb-4">
-              <label className="block text-gray-300 text-sm font-medium mb-2">
-                Featured Image URL <span className="text-red-400">*</span>
-              </label>
-              <div className="flex gap-2">
-                <input
-                  type="url"
-                  value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
-                  placeholder="https://example.com/image.jpg"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setImagePreview(!imagePreview)}
-                  className="px-4 py-3 bg-white/5 border border-white/10 text-gray-400 rounded-lg hover:text-white hover:bg-white/10 transition-colors"
-                  title="Toggle Preview"
-                >
-                  <Eye className="w-5 h-5" />
-                </button>
-              </div>
-              {imagePreview && formData.image && (
-                <div className="mt-3 rounded-lg overflow-hidden border border-white/10">
-                  <img src={formData.image} alt="Preview" className="w-full h-48 object-cover" />
-                </div>
-              )}
+              <ImageUpload
+                value={formData.image}
+                onChange={(url) => setFormData({ ...formData, image: url })}
+                label="Featured Image"
+                placeholder="https://example.com/image.jpg"
+              />
             </div>
 
             {/* Category & Read Time */}

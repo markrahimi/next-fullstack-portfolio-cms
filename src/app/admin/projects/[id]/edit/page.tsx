@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Save, Plus, X, Globe } from "lucide-react";
 import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
+import { ImageUpload } from "@/components/image-upload";
 import { ProjectFormData } from "@/types";
 
 const colorOptions = [
@@ -287,18 +288,17 @@ export default function EditProject() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div>
-                <label className="block text-gray-300 text-sm font-medium mb-2">Image URL *</label>
-                <input
-                  type="text"
-                  value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
-                  required
-                />
-              </div>
+            {/* Image Upload */}
+            <div className="mb-4">
+              <ImageUpload
+                value={formData.image}
+                onChange={(url) => setFormData({ ...formData, image: url })}
+                label="Project Image"
+                placeholder="/project-image.png or https://..."
+              />
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label className="block text-gray-300 text-sm font-medium mb-2">GitHub URL</label>
                 <input

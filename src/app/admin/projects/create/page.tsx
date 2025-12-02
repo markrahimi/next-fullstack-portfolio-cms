@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Save, Plus, X, Globe } from "lucide-react";
 import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
+import { ImageUpload } from "@/components/image-upload";
 import { ProjectFormData } from "@/types";
 
 const initialFormData: ProjectFormData = {
@@ -351,24 +352,14 @@ export default function CreateProject() {
                 </div>
               </div>
 
-              {/* Image URL */}
+              {/* Image Upload */}
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
-                  Project Image URL *
-                </label>
-                <input
-                  type="text"
-                  required
+                <ImageUpload
                   value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  onChange={(url) => setFormData({ ...formData, image: url })}
+                  label="Project Image"
                   placeholder="/project-image.png or https://..."
                 />
-                {formData.image && (
-                  <div className="mt-3 p-2 bg-white/5 rounded-lg">
-                    <img src={formData.image} alt="Preview" className="w-32 h-32 object-contain mx-auto" />
-                  </div>
-                )}
               </div>
 
               {/* Tags */}

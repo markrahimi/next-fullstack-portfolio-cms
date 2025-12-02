@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Save, Globe, Mail, MapPin, Phone, Link as LinkIcon, Image as ImageIcon, Code2 } from "lucide-react";
 import { toast } from "sonner";
 import { PageLoading } from "@/components/page-loading";
+import { ImageUpload } from "@/components/image-upload";
 import { SettingsFormData } from "@/types";
 
 export default function AdminSettings() {
@@ -239,34 +240,28 @@ export default function AdminSettings() {
 
               <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6">
                 <h3 className="text-xl font-semibold text-white mb-4">Images</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Logo URL</label>
-                    <input
-                      type="text"
-                      value={formData.logo}
-                      onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Profile Image</label>
-                    <input
-                      type="text"
-                      value={formData.profileImage}
-                      onChange={(e) => setFormData({ ...formData, profileImage: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-gray-300 text-sm font-medium mb-2">Resume/CV URL</label>
-                    <input
-                      type="text"
-                      value={formData.resumeUrl}
-                      onChange={(e) => setFormData({ ...formData, resumeUrl: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
-                    />
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <ImageUpload
+                    value={formData.logo}
+                    onChange={(url) => setFormData({ ...formData, logo: url })}
+                    label="Logo"
+                    placeholder="/logo.png or https://..."
+                  />
+                  <ImageUpload
+                    value={formData.profileImage}
+                    onChange={(url) => setFormData({ ...formData, profileImage: url })}
+                    label="Profile Image"
+                    placeholder="/profile.jpg or https://..."
+                  />
+                </div>
+                <div className="mt-4">
+                  <label className="block text-gray-300 text-sm font-medium mb-2">Resume/CV URL</label>
+                  <input
+                    type="text"
+                    value={formData.resumeUrl}
+                    onChange={(e) => setFormData({ ...formData, resumeUrl: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+                  />
                 </div>
               </div>
             </>
